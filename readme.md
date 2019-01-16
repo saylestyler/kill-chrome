@@ -1,55 +1,15 @@
-# kill-tabs [![Build Status](https://travis-ci.org/sindresorhus/kill-tabs.svg?branch=master)](https://travis-ci.org/sindresorhus/kill-tabs)
+# KILL TABS (& extensions)
 
-> Kill all Chrome tabs to improve performance, decrease battery usage, and save memory
+<img src="./ext-abuse.png">
 
-<img src="https://cloud.githubusercontent.com/assets/33569/19500764/18c8872e-9555-11e6-9599-dfab7ed90140.png" width="300" align="right">
+as both a double tab _and extension_ abuser, [the original kill-tabs](https://www.github.com/sindreorhus/kill-tabs) was almost perfect :) 
 
-*Works on macOS, Linux, Windows.*
+this fork simply removes one `!` logical not operator on line 4 in this bit of code. the result = kills extension processes as well :smirk:
 
-I'm a [tab-abuser](https://cloud.githubusercontent.com/assets/170270/8513617/4290e966-2373-11e5-98d1-37560c2498e3.png) and I use this once in a while to prevent Chrome from taking up all system resources.
-
-When you run `kill-tabs` the Chrome tab processes are killed, which means they will no longer take up system resources, but they will still be in your Chrome window, just as crashed. When you want one back you just reload the tab.
-
-
-## CLI
-
+```javascript
+.some(name => 
+  x.cmd.includes(processes[name])) && 
+  x.cmd.includes('--type=renderer') && 
+  !x.cmd.includes('--extension-process')
+)
 ```
-$ npm install --global kill-tabs
-```
-
-```
-$ kill-tabs --help
-
-  Usage
-    $ kill-tabs
-
-  Options
-    --no-chromium  Don't kill tabs in Chromium
-    --no-chrome    Don't kill tabs in Chrome
-```
-
-
-## API
-
-```
-$ npm install kill-tabs
-```
-
-```js
-const killTabs = require('kill-tabs');
-
-(async () => {
-	await killTabs();
-	console.log('Killed tabs');
-})();
-```
-
-
-## Tip
-
-You can use the [Reload All Tabs](https://chrome.google.com/webstore/detail/reload-all-tabs/lgpdljdpanfecnpindkbnikegohoobci) Chrome extension to easily reload all the tabs.
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
