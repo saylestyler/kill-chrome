@@ -23,7 +23,7 @@ module.exports = async (options = {}) => {
   }
 
   const pids = list
-    .filter(x => Object.keys(processes).some(name => x.cmd.includes(processes[name])) && x.cmd.includes('--type=renderer') && x.cmd.includes('--extension-process'))
+    .filter(x => Object.keys(processes).some(name => x.cmd.includes(processes[name])) && x.cmd.includes('--type=renderer') || x.cmd.includes('--extension-process'))
     .map(x => x.pid)
 
   console.log(pids)
