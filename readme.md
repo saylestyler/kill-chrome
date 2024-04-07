@@ -1,4 +1,4 @@
-# KILL TABS (& extensions)
+# KILL TABS (& extensions) (on all browsers)
 
 <img src="./ext-abuse.png">
 
@@ -13,3 +13,9 @@ This fork simply removes one logical and operator on line 3 in this bit of code 
   x.cmd.includes('--extension-process')
 )
 ```
+
+# todo
+
+- safari
+- firefox
+- brave, edge (shld be the same)
